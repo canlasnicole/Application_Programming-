@@ -32,5 +32,4 @@ Studying Big Data abroad has taught me that consistency is the most important fa
 * **Environment:** Jupyter Notebook
 * **Focus Areas:** Big Data Analytics, Data Processing, Statistical Learning
 
-#### Where I'm Coding From
-<a href="https://clustrmaps.com/site/your_id"><img src="//www.clustrmaps.com/map_v2.png?d=your_id&cl=ffffff&w=a&t=n" /></a>
+
