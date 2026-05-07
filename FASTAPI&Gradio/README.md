@@ -6,7 +6,7 @@ This project is a sophisticated quote management and retrieval application. It c
 
 ##  Project Links
 * **Live Demo:** [Hugging Face Spaces](https://huggingface.co/spaces/canlasnicole/app.py)
-* **Backend Framework:** [FastAPI Documentation](https://fastapi.tiangolo.com/)
+* **Backend Framework:** [[FastAPI Documentation](https://fastapi.tiangolo.com/)](http://127.0.0.1:8000/docs#/)
 
 ---
 ## Getting Started
