@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/GOAL-DATA_ENGINEER-008EC6?style=for-the-badge&logo=databricks&logoColor=white" alt="Goal: Data Engineer" />
   <img src="https://img.shields.io/badge/LOCATION-SOUTH_KOREA-F05032?style=for-the-badge" alt="Location: South Korea" />
 </p>
-### International Student at KBU | Learning Big Data
+## International Student at KBU | Learning Big Data
 Welcome to my academic repository. I am an international student majoring in Big Data at KBU. This space serves as a central portfolio for my programming coursework, data analysis exercises, and the technical concepts I am mastering throughout my studies.
 
 ---
