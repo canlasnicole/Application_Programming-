@@ -32,7 +32,7 @@ Studying Big Data abroad has taught me that consistency is the most important fa
 
 ## Contact and Links
 * Email: canlas.nicole0105@kbu.ac.kr
-* LinkedIn: (Https://www.linkedin.com/in/nicole-canlas-1a087b356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+* LinkedIn:https://sl1nk.com/5v83qp2
 
 ---
 
