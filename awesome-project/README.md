@@ -18,7 +18,7 @@ During this project, the following technical concepts were implemented:
 Interactive API Documentation
 FastAPI provides a visual interface at http://127.0.0.1:8000/docs where you can test the API directly without external tools. You can verify and test GET, PUT, and DELETE requests in real-time
 
-Project File Structure
+## Project File Structure
 
 main.py: Contains the FastAPI application logic and route definitions.
 
