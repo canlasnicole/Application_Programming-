@@ -1,6 +1,6 @@
 # Academic Repository | Big Data Studies
 
-### International Student at KBU | Learning Big Data & Korean
+### International Student at KBU | Learning Big Data
 Welcome to my academic repository. I am an international student majoring in Big Data at KBU. This space serves as a central portfolio for my programming coursework, data analysis exercises, and the technical concepts I am mastering throughout my studies.
 
 ---
