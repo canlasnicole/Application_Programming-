@@ -63,7 +63,7 @@ The repository is organized with the following key components:
 * quotes.db: The SQLite database file storing the quotes.
 * requirements.txt: A list of Python library dependencies required for the project.
 
----
+--- 
 
 ##  Installation & Setup
 
@@ -77,3 +77,23 @@ python -m venv venv
 
 # Activate on Mac/Linux
 source venv/bin/activate
+
+
+## Execution and Deployment
+
+### Local Execution
+Running the project locally will generate a link to http://127.0.0.1:8000.
+1. Activate your virtual environment.
+2. Run: python app.py
+3. Click the local link provided in the terminal to access the interface.
+
+### Hugging Face Deployment
+The project has been deployed via Hugging Face Spaces for easy access and live demonstrations.
+* Main Interface: Access the quote search, verification, and real-time multi-language translation features.
+* API Documentation: Test the backend functionality visually through the CRUD interface.
+
+---
+
+## Conclusion
+This system combines a high-performance FastAPI backend with an intuitive Gradio interface. By deploying to Hugging Face, the application ensures global accessibility without requiring manual local setup, providing a solid foundation for future data management features.
+
