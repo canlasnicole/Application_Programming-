@@ -17,7 +17,7 @@ This repository documents my academic journey and technical growth. The current 
 
 ## Learning Philosophy
 
-Studying Big Data abroad has taught me that consistency is the most important factor—whether mastering Python or learning the Korean language. I approach every bug, error, and data discrepancy not as a roadblock, but as a crucial analytical challenge and an opportunity for professional growth.
+Studying Big Data abroad has taught me that consistency is the most important factor, whether mastering Python or learning the Korean language. I approach every bug, error, and data discrepancy not as a roadblock, but as a crucial analytical challenge and an opportunity for professional growth.
 
 ---
 
