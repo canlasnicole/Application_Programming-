@@ -1,16 +1,32 @@
-# 🖋️ FastAPI and Gradio: Quotes Management System
+#  FastAPI and Gradio: Quotes Management System
 
 This project is a sophisticated quote management and retrieval application. It combines the high-performance capabilities of **FastAPI** with the intuitive, rapid-prototyping power of **Gradio** for the frontend.
 
 ---
 
-## 🚀 Project Links
+##  Project Links
 * **Live Demo:** [Hugging Face Spaces](https://huggingface.co/spaces/canlasnicole/app.py)
 * **Backend Framework:** [FastAPI Documentation](https://fastapi.tiangolo.com/)
 
 ---
+## Getting Started
 
-## ✨ Features
+Follow these steps to set up the project locally using VS Code.
+
+### 1. Open Project Folder
+Launch VS Code and open the directory containing the project files.
+
+### 2. Configure Virtual Environment
+Create and activate a virtual environment to isolate project dependencies.
+* Open Terminal: Ctrl + Shift + ` (or Terminal > New Terminal)
+* Create Environment: python -m venv venv
+* Activate Environment: .\venv\Scripts\activate
+
+### 3. Install Required Libraries
+Install the necessary frameworks by running the following command:
+pip install fastapi uvicorn gradio
+
+##  Features
 
 * **Comprehensive CRUD Logic:** Fully implemented Create, Read, Update, and Delete functions using SQLite.
 * **Data Validation:** Utilizes Pydantic's `BaseModel` to ensure every quote has a valid text, author, and category.
@@ -20,7 +36,7 @@ This project is a sophisticated quote management and retrieval application. It c
 
 ---
 
-## 📁 File Overview
+##  File Overview
 
 ### 1. `main_CRUD.py` (The Engine)
 This file contains the core database operations. Based on the implementation:
@@ -38,7 +54,7 @@ The "Glue" of the project. It launches the Gradio interface and connects it to t
 
 ---
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### 1. Environment Setup
 ```bash
