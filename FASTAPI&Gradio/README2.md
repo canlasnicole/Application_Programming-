@@ -67,18 +67,6 @@ The repository is organized with the following key components:
 
 ##  Installation & Setup
 
-### 1. Environment Setup
-```bash
-# Create a virtual environment
-python -m venv venv
-
-# Activate on Windows
-.\venv\Scripts\activate
-
-# Activate on Mac/Linux
-source venv/bin/activate
-
-
 ## Execution and Deployment
 
 ### Local Execution
@@ -96,4 +84,18 @@ The project has been deployed via Hugging Face Spaces for easy access and live d
 
 ## Conclusion
 This system combines a high-performance FastAPI backend with an intuitive Gradio interface. By deploying to Hugging Face, the application ensures global accessibility without requiring manual local setup, providing a solid foundation for future data management features.
+ i wnnqa [aste this one
+ 
+### 1. Environment Setup
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate on Windows
+.\venv\Scripts\activate
+
+# Activate on Mac/Linux
+source venv/bin/activate
+
+
 
