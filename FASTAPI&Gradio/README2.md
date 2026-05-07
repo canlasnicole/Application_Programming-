@@ -52,6 +52,17 @@ The FastAPI application layer that maps the CRUD functions to accessible URL end
 ### 3. `app.py`
 The "Glue" of the project. It launches the Gradio interface and connects it to the FastAPI backend, providing the final URL for the user.
 
+## Project Structure and Files
+
+The repository is organized with the following key components:
+
+* app.py: The main execution file integrating the Gradio UI and FastAPI backend.
+* client.py: A script designed for testing client-side requests.
+* main_CRUD.py: Contains the logic for database generation and CRUD (Create, Read, Update, Delete) operations.
+* main_server.py: Handles the FastAPI server instance and route configurations.
+* quotes.db: The SQLite database file storing the quotes.
+* requirements.txt: A list of Python library dependencies required for the project.
+
 ---
 
 ##  Installation & Setup
