@@ -29,3 +29,14 @@ Studying Big Data abroad has taught me that consistency is the most important fa
 * **Core Language:** Python 
 * **Environment:** Jupyter Notebook
 * **Focus Areas:** Big Data Analytics, Data Processing, Statistical Learning
+
+## Contact and Links
+* Email: canlas.nicole0105@kbu.ac.kr
+* LinkedIn: [linkedin.com/in/your-profile-name](https://linkedin.com/in/your-profile-name)
+
+---
+
+## Location and Global Visitors
+Based in Jinjeop, Namyangju, South Korea (Kyungbok University).
+
+![KBU Jinjeop Map](https://static-maps.yandex.ru/1.x/?lang=en_US&ll=127.1901,37.7145&z=14&l=map&size=650,250)
