@@ -33,11 +33,12 @@ Same PyTorch skeleton, different data and a slightly smaller model.
 ```
 mnist-classifier/
 │
-├── mnist_classifier.py   # Main training script
-├── mnist_model.pth       # Saved model weights (generated after training)
-├── data/                 # Auto-downloaded MNIST dataset
+├── mnist_classifier.ipynb   # Google Colab notebook (main)
+├── mnist_model.pth          # Saved model weights (generated after training)
 └── README.md
 ```
+
+> 💡 This project was built and run entirely on **Google Colab** — no local setup needed. Dataset downloads automatically inside the notebook.
 
 ---
 
@@ -59,23 +60,18 @@ Output (probabilities for digits 0–9)
 
 ## ⚙️ Requirements
 
-```bash
-pip install torch torchvision
-```
+No local installation needed! Just open the notebook in **Google Colab** — PyTorch and torchvision come pre-installed.
 
-- Python 3.8+
-- PyTorch 2.x
-- torchvision
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
 ---
 
 ## 🚀 How to Run
 
-```bash
-python mnist_classifier.py
-```
-
-On first run, MNIST dataset will be **automatically downloaded** to `./data/`.
+1. Open the `.ipynb` notebook in [Google Colab](https://colab.research.google.com/)
+2. Go to **Runtime → Run all** (or run cells one by one)
+3. MNIST dataset will be **automatically downloaded** on first run
+4. Optional: Enable GPU via **Runtime → Change runtime type → T4 GPU** for faster training
 
 ---
 
