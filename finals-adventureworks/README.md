@@ -4,6 +4,7 @@
 
 A full-stack CRM analysis and prediction API built on AdventureWorks sales data. Features a clean MVC architecture with four modules — Sales, Customers, Products, and ML Predictions — plus a Docker-ready deployment config for Hugging Face Spaces.
 
+Huggingface: https://huggingface.co/spaces/canlasnicole/adventureworks-gradio 
 ---
 
 ## 🏗️ Project Structure
