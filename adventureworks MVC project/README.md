@@ -50,7 +50,7 @@ adventureworks/
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
 ```
-
+Huggingface: https://huggingface.co/spaces/canlasnicole/adventureworks-gradio
 Swagger UI: **http://127.0.0.1:8000/docs**
 
 ---
