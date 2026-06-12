@@ -1,53 +1,164 @@
-# 📚 Spring Semester 2026 — Big Data Projects
-**Kyungbok University (경복대학교) · Big Data Major · Spring 2026**
+# 📊 AdventureWorks CRM API
 
-A collection of coursework, weekly labs, and final projects completed during the Spring 2026 semester, covering deep learning, NLP, data analysis, REST APIs, and machine learning pipelines.
-
----
-
-## 🗂️ Repository Structure
-
-### 🔬 Major Projects
-
-| Folder | Description |
-|---|---|
-| [`adventureworks MVC project`](./adventureworks%20MVC%20project) | AdventureWorks CRM Analysis System — 5-stage ML pipeline (RFM segmentation, churn prediction, Random Forest, Zero-Shot NLP via `facebook/bart-large-mnli`, AI Advisor via LLaMA 3.3/Groq API). Deployed to Hugging Face Spaces. |
-| [`FASTAPI&Gradio`](./FASTAPI%26Gradio) | FastAPI MVC Library Book Rental System with Gradio interface. Full CRUD REST API with MVC architecture. Also deployed to Hugging Face Spaces. |
-| [`CensusProject`](./CensusProject) | Census data analysis and visualization project. |
-| [`DL-with-pytorch`](./DL-with-pytorch) | Deep learning exercises using PyTorch — FCNN, classification, and related architectures. |
-| [`CountVectorizerTask`](./CountVectorizerTask) | NLP text vectorization task using `CountVectorizer` for feature extraction. |
-| [`awesome-project`](./awesome-project) | Miscellaneous experimental project. |
-
-### 📅 Weekly Labs
-
-| Folder | Topics Covered |
-|---|---|
-| [`week 1`](./week%201) | Course intro, environment setup |
-| [`week 2`](./week%202) | Python fundamentals & data structures |
-| [`week 3`](./week%203) | NumPy, Pandas basics |
-| [`week 4`](./week%204) | Data preprocessing & EDA |
-| [`week 5`](./week%205) | Visualization (Matplotlib/Seaborn) |
-| [`week 11`](./week%2011) | Machine learning models |
-| [`week 12`](./week12) | Model evaluation & tuning |
-| [`week 13(library-api)`](./week%2013(library-api)) | REST API development with FastAPI |
+FastAPI + SQLite + scikit-learn 기반 판매 데이터 분석 및 예측 API
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ 프로젝트 구조 (MVC — Like a package)
 
-- **Languages:** Python, Jupyter Notebook
-- **Frameworks:** FastAPI, Gradio, PyTorch
-- **ML/NLP:** scikit-learn, Random Forest, Zero-Shot Classification (`facebook/bart-large-mnli`), LLaMA 3.3 via Groq API
-- **Data:** Pandas, NumPy, Matplotlib, Seaborn
-- **Deployment:** Hugging Face Spaces
+```
+adventureworks/
+├── main.py              # FastAPI 앱 진입점
+├── database.py          # DB 연결 설정 (SQLite)
+├── adventureworks.db    # 데이터베이스 파일
+├── AdventureWorks_Sales.xlsx
+├── sales/
+│   ├── models.py        # Model      — SQL 데이터 저장·조회
+│   ├── schemas.py       # View       — Pydantic 입출력 검증
+│   ├── crud.py          # 비즈니스 로직
+│   └── router.py        # Controller — /api/sales 엔드포인트
+├── customers/
+│   ├── models.py        # RFM / CLV / 이탈 위험 조회
+│   ├── schemas.py
+│   ├── crud.py
+│   └── router.py        # /api/customers 엔드포인트
+├── products/
+│   ├── models.py
+│   ├── schemas.py
+│   ├── crud.py
+│   └── router.py        # /api/products 엔드포인트
+└── predict/
+    ├── models.py        # scikit-learn 모델 학습
+    ├── schemas.py       # 예측 입출력 스키마
+    ├── crud.py          # 모델 로딩 및 예측 처리
+    └── router.py        # /api/predict 엔드포인트
+```
+
+### MVC 역할 분리
+
+| 레이어 | 파일 | 역할 |
+|--------|------|------|
+| Model | `*/models.py` | SQL 데이터 저장·조회 / ML 모델 학습 |
+| View | `*/schemas.py` | Pydantic — 입출력 데이터 검증·변환 |
+| Controller | `*/router.py` | FastAPI — 요청 수신 → crud 호출 → 응답 반환 |
 
 ---
 
-## 🚀 Live Deployments
+## ⚙️ 설치 및 실행
 
-- **AdventureWorks CRM App:** [canlasnicole-adventureworks-crm.hf.space](https://canlasnicole-adventureworks-crm.hf.space)
-- **AdventureWorks Gradio App:** [canlasnicole-adventureworks-gradio.hf.space](https://canlasnicole-adventureworks-gradio.hf.space)
+```bash
+pip install -r requirements.txt
+python -m uvicorn main:app --reload
+```
+
+Swagger UI: **http://127.0.0.1:8000/docs**
 
 ---
 
-*Big Data Dept. · Kyungbok University · Spring 2026*
+## 🌐 API 엔드포인트
+
+### 📈 Sales (판매 데이터 CRUD + EDA)
+
+| Method | URL | 설명 |
+|--------|-----|------|
+| GET | `/api/sales/` | 전체 판매 데이터 |
+| GET | `/api/sales/summary` | 전체 통계 요약 |
+| GET | `/api/sales/monthly` | 월별 매출 트렌드 (EDA) |
+| GET | `/api/sales/region` | 지역별 매출 분석 (EDA) |
+| GET | `/api/sales/search?keyword=Bikes` | 키워드 검색 |
+| POST | `/api/sales/` | 판매 기록 생성 |
+| PUT | `/api/sales/{id}` | 판매 기록 수정 |
+| DELETE | `/api/sales/{id}` | 판매 기록 삭제 |
+
+### 👥 Customers (고객 분석)
+
+| Method | URL | 설명 |
+|--------|-----|------|
+| GET | `/api/customers/` | 전체 고객 피처 |
+| GET | `/api/customers/top` | 상위 고객 (지출 기준) |
+| GET | `/api/customers/churn-risk` | 이탈 위험 고객 |
+| GET | `/api/customers/clv/VIP` | CLV 티어별 (VIP / Mid-Value / Bargain Hunter) |
+| GET | `/api/customers/rfm/Champions` | RFM 세그먼트별 (Champions / Loyal / At Risk / Lost) |
+
+### 🛒 Products
+
+| Method | URL | 설명 |
+|--------|-----|------|
+| GET | `/api/products/` | 전체 제품 목록 |
+| GET | `/api/products/top` | 상위 판매 제품 |
+
+### 🤖 Predict (머신러닝 예측)
+
+| Method | URL | 설명 |
+|--------|-----|------|
+| GET | `/api/predict/info` | 모델 정보 및 성능 지표 |
+| POST | `/api/predict/churn` | 이탈 위험 예측 (RandomForest 분류) |
+| POST | `/api/predict/sales` | 구매 금액 예측 (Linear Regression 회귀) |
+
+---
+
+## 🤖 예측 API 사용 예시
+
+```bash
+# 이탈 위험 예측
+curl -X POST http://127.0.0.1:8000/api/predict/churn \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Recency": 120,
+    "total_orders": 5,
+    "total_spend": 3500.0,
+    "avg_spend": 700.0,
+    "tenure_days": 400,
+    "RFM_score": 8,
+    "CLV": 120.5
+  }'
+```
+
+---
+
+## 🛠️ 기술 스택
+
+| 항목 | 내용 |
+|------|------|
+| Framework | FastAPI |
+| Database | SQLite |
+| Data | Pandas, NumPy |
+| ML | scikit-learn (RandomForest, LinearRegression) |
+| Validation | Pydantic v2 |
+| Server | Uvicorn |
+
+---
+
+## 📝 과제 정보
+
+- 과목: 2026 Spring
+- 주제: AdventureWorks CRM 분석 시스템
+- 구조: FastAPI MVC (Like a package)
+- 모델: 이탈 예측 (분류) + 판매 금액 예측 (회귀)
+
+---
+
+## 🧪 테스트 실행
+
+```bash
+pip install pytest httpx
+pytest test_api.py -v
+```
+
+## 🤖 모델 재학습
+
+서버 실행 중:
+```
+POST http://127.0.0.1:8000/api/predict/retrain
+```
+
+또는 직접:
+```bash
+python -c "from predict.crud import retrain_all; retrain_all()"
+```
+
+## 📈 시계열 예측
+
+```
+GET http://127.0.0.1:8000/api/predict/timeseries?n_months=6
+```
